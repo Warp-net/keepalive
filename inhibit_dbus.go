@@ -1,4 +1,4 @@
-package power
+package keepalive
 
 // The Linux inhibitor, written against a small D-Bus interface so it can be
 // tested on any OS with a fake bus. The godbus adapter and the

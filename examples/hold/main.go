@@ -7,20 +7,20 @@ import (
 	"os/signal"
 	"time"
 
-	power "keepalive"
+	"github.com/Warp-net/keepalive"
 )
 
 func main() {
 	ctx, stop := signal.NotifyContext(context.Background(), os.Interrupt)
 	defer stop()
 	acquireCtx, cancel := context.WithTimeout(ctx, 15*time.Second)
-	hold, err := power.New().Acquire(acquireCtx, power.Options{
+	hold, err := keepalive.New().Acquire(acquireCtx, keepalive.Options{
 		KeepDisplay: false,
 		Reason:      "serving paired devices",
 	})
 	cancel()
 	if err != nil {
-		log.Printf("cannot prevent sleep: %v; %s", err, power.Hint(err))
+		log.Printf("cannot prevent sleep: %v; %s", err, keepalive.Hint(err))
 		return
 	}
 	defer func() {
@@ -30,7 +30,7 @@ func main() {
 	}()
 	log.Printf("sleep protection active: %s; Ctrl+C to release", hold.Describe())
 	var lost <-chan error
-	if watcher, ok := hold.(power.Watcher); ok {
+	if watcher, ok := hold.(keepalive.Watcher); ok {
 		lost = watcher.Lost()
 	}
 	select {

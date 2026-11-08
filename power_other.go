@@ -1,6 +1,6 @@
 //go:build !darwin && !linux && !windows
 
-package power
+package keepalive
 
 import (
 	"context"

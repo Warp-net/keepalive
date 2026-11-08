@@ -1,5 +1,7 @@
 # keepalive
-
+```shell
+go get github.com/Warp-net/keepalive
+```
 Requires Go 1.25+. MIT license.
 
 ## Integration

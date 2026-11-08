@@ -1,6 +1,6 @@
 //go:build darwin && !cgo
 
-package power
+package keepalive
 
 // Without cgo there is no IOKit; fall back to a caffeinate child.
 

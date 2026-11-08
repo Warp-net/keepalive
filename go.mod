@@ -1,4 +1,4 @@
-module keepalive
+module github.com/Warp-net/keepalive
 
 go 1.25.0
 

@@ -1,6 +1,6 @@
 //go:build darwin && cgo
 
-package power
+package keepalive
 
 /*
 #cgo LDFLAGS: -framework IOKit -framework CoreFoundation

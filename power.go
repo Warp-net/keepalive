@@ -2,7 +2,7 @@
 // acquire a Hold and release it when the session ends. Every implementation
 // uses an OS mechanism that the OS drops when the process exits, so a crashed
 // or killed keepalive never leaves the machine unable to sleep.
-package power
+package keepalive
 
 import (
 	"context"

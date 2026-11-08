@@ -1,6 +1,6 @@
 //go:build darwin || linux
 
-package power
+package keepalive
 
 import (
 	"errors"
